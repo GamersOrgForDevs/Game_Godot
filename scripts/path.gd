@@ -11,7 +11,8 @@ func _ready():
 	tween = get_tree().create_tween()
 	tween.bind_node(follow)
 	tween.set_trans(Tween.TRANS_LINEAR)
-	tween.tween_property(follow, "progress_ratio", 1, 2)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(follow, "progress_ratio", 1, path_time)
 	tween.connect("finished", on_tween_finish)
 	tween.set_loops()
 
