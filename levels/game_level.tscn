@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bquswgbkv8ic7" path="res://art/Tilesets/Wooden House.png" id="6_8yp5p"]
 [ext_resource type="Texture2D" uid="uid://8n27qa17egck" path="res://art/Tilesets/Fences.png" id="7_t5c8j"]
 [ext_resource type="PackedScene" uid="uid://rejki54tgc5n" path="res://objects/chest.tscn" id="8_rtq78"]
-[ext_resource type="Script" path="res://scripts/path.gd" id="9_8xdyu"]
+[ext_resource type="Script" path="res://scripts/spawn_enemies_on_path.gd" id="9_8xdyu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4cg3"]
 texture = ExtResource("2_tm5d6")
@@ -747,4 +747,4 @@ position = Vector2(32, -105)
 [node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_m60xl")
 script = ExtResource("9_8xdyu")
-spawn_time = 1.76
+spawn_time = 0.55
