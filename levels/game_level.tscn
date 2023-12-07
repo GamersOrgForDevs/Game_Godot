@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dukeo1l05vh4k"]
+[gd_scene load_steps=18 format=3 uid="uid://dukeo1l05vh4k"]
 
 [ext_resource type="PackedScene" uid="uid://ijhhshl56et3" path="res://characters/example_player.tscn" id="1_eujvy"]
 [ext_resource type="Texture2D" uid="uid://d0nrdop0uingc" path="res://art/Tilesets/Grass.png" id="2_tm5d6"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://8n27qa17egck" path="res://art/Tilesets/Fences.png" id="7_t5c8j"]
 [ext_resource type="PackedScene" uid="uid://rejki54tgc5n" path="res://objects/chest.tscn" id="8_rtq78"]
 [ext_resource type="Script" path="res://scripts/path.gd" id="9_8xdyu"]
-[ext_resource type="PackedScene" uid="uid://ciigmr8aony1v" path="res://objects/bed.tscn" id="9_nyn8t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4cg3"]
 texture = ExtResource("2_tm5d6")
@@ -745,10 +744,7 @@ position = Vector2(-39, -41)
 [node name="Chest3" parent="." instance=ExtResource("8_rtq78")]
 position = Vector2(32, -105)
 
-[node name="path" type="Path2D" parent="."]
+[node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_m60xl")
 script = ExtResource("9_8xdyu")
-
-[node name="follow" parent="path" instance=ExtResource("9_nyn8t")]
-position = Vector2(32, -86)
-rotation = -0.0210495
+spawn_time = 0.11
