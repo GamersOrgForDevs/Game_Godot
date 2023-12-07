@@ -749,8 +749,6 @@ position = Vector2(32, -105)
 curve = SubResource("Curve2D_m60xl")
 script = ExtResource("9_8xdyu")
 
-[node name="follow" type="PathFollow2D" parent="path"]
-position = Vector2(32, -83)
+[node name="follow" parent="path" instance=ExtResource("9_nyn8t")]
+position = Vector2(32, -86)
 rotation = -0.0210495
-
-[node name="Bed" parent="path/follow" instance=ExtResource("9_nyn8t")]
