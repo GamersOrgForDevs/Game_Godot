@@ -1,21 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciigmr8aony1v"]
+[gd_scene load_steps=8 format=3 uid="uid://ciigmr8aony1v"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_sasya"]
-[ext_resource type="Texture2D" uid="uid://fkn8ll712ray" path="res://art/Objects/Basic Furniture.png" id="2_oerng"]
+[ext_resource type="Texture2D" uid="uid://rkca73h5u1fm" path="res://objects/Running raider 1.png" id="2_1qsmh"]
+[ext_resource type="Texture2D" uid="uid://dovp3td77113i" path="res://objects/Running raider2.png" id="3_qgaeb"]
+[ext_resource type="Texture2D" uid="uid://b68yb4m688mra" path="res://objects/Running raider3.png" id="4_cblbl"]
+[ext_resource type="Texture2D" uid="uid://dnayoaj8ri8jc" path="res://objects/Running raider4.png" id="5_ki4yb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwot8"]
-size = Vector2(14, 16)
+[sub_resource type="SpriteFrames" id="SpriteFrames_wm8ir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1qsmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qgaeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cblbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ki4yb")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqqjg"]
+size = Vector2(22.1905, 35.4762)
 
 [node name="PathFollow2D" type="PathFollow2D"]
 script = ExtResource("1_sasya")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_oerng")
-region_enabled = true
-region_rect = Rect2(0, 16, 16, 32)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 15)
+scale = Vector2(0.984375, 0.984375)
+sprite_frames = SubResource("SpriteFrames_wm8ir")
+animation = &"Running"
+autoplay = "Running"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(0, 8)
-shape = SubResource("RectangleShape2D_vwot8")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+position = Vector2(-1.01588, -14.2222)
+shape = SubResource("RectangleShape2D_pqqjg")
