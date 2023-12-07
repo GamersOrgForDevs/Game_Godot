@@ -747,4 +747,4 @@ position = Vector2(32, -105)
 [node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_m60xl")
 script = ExtResource("9_8xdyu")
-spawn_time = 0.11
+spawn_time = 1.76

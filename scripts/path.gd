@@ -5,7 +5,7 @@ extends Path2D
 var tween
 var timer
 
-const path_follow_obj = preload("res://objects/bed.tscn")
+const path_follow_obj = preload("res://objects/enemy.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(true)
@@ -20,11 +20,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
-func on_tween_finish():
-	print("DOne")
 func _on_timer_timeout():
 	var instance = path_follow_obj.instantiate()
 	self.add_child(instance)
@@ -33,5 +31,4 @@ func _on_timer_timeout():
 	tween.set_trans(Tween.TRANS_LINEAR)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(instance, "progress_ratio", 1, path_time)
-	tween.connect("finished", on_tween_finish)
 	tween.set_loops(1)
