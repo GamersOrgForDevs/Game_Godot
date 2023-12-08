@@ -1,25 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciigmr8aony1v"]
+[gd_scene load_steps=12 format=3 uid="uid://ciigmr8aony1v"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_sasya"]
-[ext_resource type="Texture2D" uid="uid://rkca73h5u1fm" path="res://objects/Running raider 1.png" id="2_1qsmh"]
-[ext_resource type="Texture2D" uid="uid://dovp3td77113i" path="res://objects/Running raider2.png" id="3_qgaeb"]
-[ext_resource type="Texture2D" uid="uid://b68yb4m688mra" path="res://objects/Running raider3.png" id="4_cblbl"]
-[ext_resource type="Texture2D" uid="uid://dnayoaj8ri8jc" path="res://objects/Running raider4.png" id="5_ki4yb"]
+[ext_resource type="Texture2D" uid="uid://bn7g6ts6bil18" path="res://art/Characters/Lil Wizard right run 0.png" id="2_tj4e0"]
+[ext_resource type="Texture2D" uid="uid://ck7e7w8oxdb3k" path="res://art/Characters/Lil Wizard right run 1.png" id="3_6hlnt"]
+[ext_resource type="Texture2D" uid="uid://lw8vj0ncamty" path="res://art/Characters/Lil Wizard right run 2.png" id="4_0ghsy"]
+[ext_resource type="Texture2D" uid="uid://cvlah50wgtxvh" path="res://art/Characters/Lil Wizard right run 3.png" id="5_bkopb"]
+[ext_resource type="Texture2D" uid="uid://cnwbw7x4w6o53" path="res://art/Characters/Lil Wizard right run 4.png" id="6_dx35c"]
+[ext_resource type="Texture2D" uid="uid://cud1apk14jil3" path="res://art/Characters/Lil Wizard right run 5.png" id="7_w70ii"]
+[ext_resource type="Texture2D" uid="uid://ctj5bpibs3x8r" path="res://art/Characters/Lil Wizard right run 6.png" id="8_lxgvb"]
+[ext_resource type="Texture2D" uid="uid://bi5d3m1x3kfja" path="res://art/Characters/Lil Wizard right run 7.png" id="9_die1h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wm8ir"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1qsmh")
+"texture": ExtResource("2_tj4e0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qgaeb")
+"texture": ExtResource("3_6hlnt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_cblbl")
+"texture": ExtResource("4_0ghsy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ki4yb")
+"texture": ExtResource("5_bkopb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dx35c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w70ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lxgvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_die1h")
 }],
 "loop": true,
 "name": &"Running",
@@ -27,18 +43,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqqjg"]
-size = Vector2(22.1905, 35.4762)
+size = Vector2(35.9755, 68.8417)
 
 [node name="PathFollow2D" type="PathFollow2D"]
 script = ExtResource("1_sasya")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, 15)
-scale = Vector2(0.984375, 0.984375)
+position = Vector2(-1, 0)
+scale = Vector2(0.460938, 0.460938)
 sprite_frames = SubResource("SpriteFrames_wm8ir")
 animation = &"Running"
 autoplay = "Running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(-1.01588, -14.2222)
+position = Vector2(5.87664, 2.46053)
 shape = SubResource("RectangleShape2D_pqqjg")
