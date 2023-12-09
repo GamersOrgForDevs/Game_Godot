@@ -6,4 +6,3 @@ func _on_Button_pressed(extra_arg_0):
 		get_tree().change_scene_to_file("res://levels/game_level.tscn")
 	elif extra_arg_0 == "ExitGame":
 		get_tree().quit()
-	
