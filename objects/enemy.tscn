@@ -43,18 +43,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqqjg"]
-size = Vector2(35.9755, 68.8417)
+size = Vector2(34.4618, 58.7489)
 
 [node name="PathFollow2D" type="PathFollow2D"]
 script = ExtResource("1_sasya")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.460938, 0.460938)
+position = Vector2(1, 1)
+scale = Vector2(0.240234, 0.255859)
 sprite_frames = SubResource("SpriteFrames_wm8ir")
 animation = &"Running"
 autoplay = "Running"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(5.87664, 2.46053)
+position = Vector2(-2.38419e-07, -3.90839)
 shape = SubResource("RectangleShape2D_pqqjg")
