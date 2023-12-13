@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dukeo1l05vh4k"]
+[gd_scene load_steps=18 format=3 uid="uid://dukeo1l05vh4k"]
 
 [ext_resource type="PackedScene" uid="uid://ijhhshl56et3" path="res://characters/example_player.tscn" id="1_eujvy"]
 [ext_resource type="Texture2D" uid="uid://d0nrdop0uingc" path="res://art/Tilesets/Grass.png" id="2_tm5d6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://8n27qa17egck" path="res://art/Tilesets/Fences.png" id="7_t5c8j"]
 [ext_resource type="PackedScene" uid="uid://rejki54tgc5n" path="res://objects/chest.tscn" id="8_rtq78"]
 [ext_resource type="PackedScene" uid="uid://ciigmr8aony1v" path="res://objects/bed.tscn" id="9_nyn8t"]
+[ext_resource type="PackedScene" uid="uid://bch428c4s76ww" path="res://ui/ui.tscn" id="10_rmv6l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4cg3"]
 texture = ExtResource("2_tm5d6")
@@ -715,7 +716,13 @@ remote_path = NodePath("../../Camera2D")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 2)
 scale = Vector2(1, 1)
-zoom = Vector2(2, 2)
+
+[node name="InGameUI" parent="Camera2D" instance=ExtResource("10_rmv6l")]
+layout_direction = 1
+offset_left = -749.0
+offset_top = -402.0
+offset_right = 753.0
+offset_bottom = 401.0
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 2)
