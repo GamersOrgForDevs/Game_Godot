@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bquswgbkv8ic7" path="res://art/Tilesets/Wooden House.png" id="6_8yp5p"]
 [ext_resource type="Texture2D" uid="uid://8n27qa17egck" path="res://art/Tilesets/Fences.png" id="7_t5c8j"]
 [ext_resource type="PackedScene" uid="uid://rejki54tgc5n" path="res://objects/chest.tscn" id="8_rtq78"]
+[ext_resource type="Script" path="res://scripts/spawn_enemies_on_path.gd" id="9_8xdyu"]
 [ext_resource type="PackedScene" uid="uid://ciigmr8aony1v" path="res://objects/bed.tscn" id="9_nyn8t"]
 [ext_resource type="PackedScene" uid="uid://bch428c4s76ww" path="res://ui/ui.tscn" id="10_rmv6l"]
 
@@ -703,6 +704,12 @@ sources/3 = SubResource("TileSetAtlasSource_38cc7")
 sources/4 = SubResource("TileSetAtlasSource_c165t")
 sources/5 = SubResource("TileSetAtlasSource_xdvp8")
 
+[sub_resource type="Curve2D" id="Curve2D_m60xl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 32, -83, 0, 0, 0, 0, 127, -85, 0, 0, 0, 0, 125, 24, 0, 0, 0, 0, 127, -85, 0, 0, 0, 0, 32, -83)
+}
+point_count = 5
+
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 
@@ -746,11 +753,7 @@ position = Vector2(-39, -41)
 [node name="Chest3" parent="." instance=ExtResource("8_rtq78")]
 position = Vector2(32, -105)
 
-[node name="Chest4" parent="." instance=ExtResource("9_nyn8t")]
-position = Vector2(87, -86)
-
-[node name="Chest5" parent="." instance=ExtResource("9_nyn8t")]
-position = Vector2(191, 23)
-
-[node name="Chest6" parent="." instance=ExtResource("9_nyn8t")]
-position = Vector2(25, -4)
+[node name="EnemyPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_m60xl")
+script = ExtResource("9_8xdyu")
+spawn_time = 0.55
