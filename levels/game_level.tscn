@@ -710,12 +710,13 @@ y_sort_enabled = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="ExamplePlayer"]
 position = Vector2(0, 8.33333)
-scale = Vector2(4.16667, 4.16667)
+scale = Vector2(2.083, 2.083)
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 2)
-scale = Vector2(1, 1)
+scale = Vector2(0.49992, 0.49992)
+zoom = Vector2(2, 2)
 
 [node name="InGameUI" parent="Camera2D" instance=ExtResource("10_rmv6l")]
 layout_direction = 1
