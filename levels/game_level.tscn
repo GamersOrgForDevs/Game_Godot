@@ -756,4 +756,5 @@ position = Vector2(32, -105)
 position = Vector2(2, 0)
 curve = SubResource("Curve2D_m60xl")
 script = ExtResource("9_8xdyu")
-spawn_time = 0.55
+path_time = 10.0
+spawn_time = 1.0

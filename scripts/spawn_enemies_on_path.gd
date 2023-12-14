@@ -37,5 +37,4 @@ func _on_timer_timeout():
 	tween.set_loops(1)
 
 func _on_damage_take(damage):
-	print("Damage Taken " + str(damage))
 	do_damage.emit(damage)
