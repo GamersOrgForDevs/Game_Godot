@@ -19,7 +19,6 @@ func _process(delta):
 
 func _on_increase_score_pressed():
 	score_value += 1
-	print(score_value)
 	score_value_text.text = str(score_value)
 
 func _on_take_damage_pressed():
