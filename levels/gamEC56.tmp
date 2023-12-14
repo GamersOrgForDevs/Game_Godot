@@ -1,5 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dukeo1l05vh4k"]
 
+[ext_resource type="PackedScene" uid="uid://ijhhshl56et3" path="res://characters/example_player.tscn" id="1_eujvy"]
+[ext_resource type="Script" path="res://scripts/game_level.gd" id="1_w8bto"]
 [ext_resource type="Texture2D" uid="uid://d0nrdop0uingc" path="res://art/Tilesets/Grass.png" id="2_tm5d6"]
 [ext_resource type="Texture2D" uid="uid://ud87ipeyma3m" path="res://art/Tilesets/Hills.png" id="3_p83ul"]
 [ext_resource type="Texture2D" uid="uid://rw3kuq76jrrj" path="res://art/Tilesets/Tilled Dirt.png" id="4_tkh1l"]
@@ -7,33 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://bquswgbkv8ic7" path="res://art/Tilesets/Wooden House.png" id="6_8yp5p"]
 [ext_resource type="Texture2D" uid="uid://8n27qa17egck" path="res://art/Tilesets/Fences.png" id="7_t5c8j"]
 [ext_resource type="PackedScene" uid="uid://rejki54tgc5n" path="res://objects/chest.tscn" id="8_rtq78"]
-[ext_resource type="PackedScene" uid="uid://dgovyp4gfwy27" path="res://levels/basic_tower_scene.tscn" id="9_33f2h"]
-[ext_resource type="Texture2D" uid="uid://vjy0vg6niefd" path="res://art/Characters/BasicTowerSprite.png" id="10_rf78o"]
 
-[sub_resource type="GDScript" id="GDScript_nb6yl"]
+[sub_resource type="GDScript" id="GDScript_utic8"]
 script/source = "extends Node2D
 
-@onready var tower_spawn_pos = $TowerSpawnPos
-@onready var bullet_container = $BulletContainer
 
-var tower = null
-
-
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	tower = get_tree().get_first_node_in_group(\"towers\")
-	assert(tower!=null)
-	tower.global_position = tower_spawn_pos.global_position
-	tower.connect(\"bullet_shot\", _on_tower_bullet_shot)
+	pass # Replace with function body.
 
-func _process(_delta):
-	if Input.is_action_just_pressed(\"quit\"):
-		get_tree().quit()
 
-func _on_tower_bullet_shot(bullet_scene, location):
-	var bullet = bullet_scene.instantiate()
-	bullet.global_position = location 
-	bullet_container.add_child(bullet)
-"
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _shoot():
+	pass"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4cg3"]
 texture = ExtResource("2_tm5d6")
@@ -729,19 +720,20 @@ sources/5 = SubResource("TileSetAtlasSource_xdvp8")
 
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
-script = SubResource("GDScript_nb6yl")
+script = ExtResource("1_w8bto")
 
-[node name="BasicTower" parent="." groups=["towers"] instance=ExtResource("9_33f2h")]
+[node name="ExamplePlayer" parent="." instance=ExtResource("1_eujvy")]
+position = Vector2(-50, 0)
+script = SubResource("GDScript_utic8")
 
-[node name="Sprite2D2" type="Sprite2D" parent="BasicTower"]
-scale = Vector2(1.25, 1)
-texture = ExtResource("10_rf78o")
-
-[node name="FiringHole2" type="Marker2D" parent="BasicTower"]
-position = Vector2(8, 0)
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="ExamplePlayer"]
+position = Vector2(0, 8.33333)
+scale = Vector2(4.16667, 4.16667)
+remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(-50, 2)
+scale = Vector2(1, 1)
 zoom = Vector2(2, 2)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -764,7 +756,3 @@ position = Vector2(-39, -41)
 
 [node name="Chest3" parent="." instance=ExtResource("8_rtq78")]
 position = Vector2(32, -105)
-
-[node name="TowerSpawnPos" type="Node2D" parent="."]
-
-[node name="BulletContainer" type="Node2D" parent="."]

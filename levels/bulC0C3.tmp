@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://1wq14dnjhfyy"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_l0m0m"]
+[ext_resource type="Texture2D" uid="uid://bnmbg8631wcx8" path="res://art/Objects/BasicProjectile.png" id="2_vigmg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6bcq"]
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_l0m0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vigmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.3, 0.3)
+shape = SubResource("RectangleShape2D_n6bcq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-5, 0)
+scale = Vector2(0.25, 0.25)

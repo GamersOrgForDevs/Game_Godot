@@ -7,32 +7,26 @@
 [ext_resource type="Texture2D" uid="uid://bquswgbkv8ic7" path="res://art/Tilesets/Wooden House.png" id="6_8yp5p"]
 [ext_resource type="Texture2D" uid="uid://8n27qa17egck" path="res://art/Tilesets/Fences.png" id="7_t5c8j"]
 [ext_resource type="PackedScene" uid="uid://rejki54tgc5n" path="res://objects/chest.tscn" id="8_rtq78"]
-[ext_resource type="PackedScene" uid="uid://dgovyp4gfwy27" path="res://levels/basic_tower_scene.tscn" id="9_33f2h"]
-[ext_resource type="Texture2D" uid="uid://vjy0vg6niefd" path="res://art/Characters/BasicTowerSprite.png" id="10_rf78o"]
+[ext_resource type="Script" path="res://scripts/BasicTower.gd" id="11_i5hpj"]
+[ext_resource type="Texture2D" path="res://art/Characters/BasicTowerSprite.png" id="12_d0gkg"]
 
 [sub_resource type="GDScript" id="GDScript_nb6yl"]
 script/source = "extends Node2D
 
 @onready var tower_spawn_pos = $TowerSpawnPos
-@onready var bullet_container = $BulletContainer
 
 var tower = null
 
-
 func _ready():
-	tower = get_tree().get_first_node_in_group(\"towers\")
+	tower = get_tree().get_first_node_in_group(\"BasicTower\")
 	assert(tower!=null)
 	tower.global_position = tower_spawn_pos.global_position
-	tower.connect(\"bullet_shot\", _on_tower_bullet_shot)
+	tower.bullet_shot.connect(_on_tower_bullet_shot)
 
 func _process(_delta):
 	if Input.is_action_just_pressed(\"quit\"):
 		get_tree().quit()
 
-func _on_tower_bullet_shot(bullet_scene, location):
-	var bullet = bullet_scene.instantiate()
-	bullet.global_position = location 
-	bullet_container.add_child(bullet)
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4cg3"]
@@ -731,17 +725,21 @@ sources/5 = SubResource("TileSetAtlasSource_xdvp8")
 y_sort_enabled = true
 script = SubResource("GDScript_nb6yl")
 
-[node name="BasicTower" parent="." groups=["towers"] instance=ExtResource("9_33f2h")]
+[node name="BasicTower" type="CharacterBody2D" parent="."]
+script = ExtResource("11_i5hpj")
 
-[node name="Sprite2D2" type="Sprite2D" parent="BasicTower"]
-scale = Vector2(1.25, 1)
-texture = ExtResource("10_rf78o")
+[node name="Sprite2D" type="Sprite2D" parent="BasicTower"]
+texture = ExtResource("12_d0gkg")
 
-[node name="FiringHole2" type="Marker2D" parent="BasicTower"]
+[node name="FiringHole" type="Marker2D" parent="BasicTower"]
 position = Vector2(8, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BasicTower"]
+scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 2)
+scale = Vector2(1, 1)
 zoom = Vector2(2, 2)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -764,7 +762,3 @@ position = Vector2(-39, -41)
 
 [node name="Chest3" parent="." instance=ExtResource("8_rtq78")]
 position = Vector2(32, -105)
-
-[node name="TowerSpawnPos" type="Node2D" parent="."]
-
-[node name="BulletContainer" type="Node2D" parent="."]

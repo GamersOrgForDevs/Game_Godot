@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgovyp4gfwy27"]
+
+[ext_resource type="Script" path="res://scripts/basicTower.gd" id="1_n4uwy"]
+[ext_resource type="Texture2D" uid="uid://vjy0vg6niefd" path="res://art/Characters/BasicTowerSprite.png" id="2_rsar4"]
+
+[node name="BasicTower" type="CharacterBody2D"]
+script = ExtResource("1_n4uwy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1)
+texture = ExtResource("2_rsar4")
+
+[node name="FiringHole" type="Marker2D" parent="."]
+position = Vector2(10, 0)
