@@ -1,0 +1,199 @@
+[gd_scene load_steps=9 format=3 uid="uid://bch428c4s76ww"]
+
+[ext_resource type="Texture2D" uid="uid://cpfys0bgauk3l" path="res://icon.svg" id="1_ljuyh"]
+[ext_resource type="Script" path="res://scripts/ingame_ui.gd" id="1_tm1fx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elr6c"]
+bg_color = Color(1, 0.337255, 0.32549, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jaoda"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7vko"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfccl"]
+bg_color = Color(0.0784314, 0.74902, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_tlntx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48q5y"]
+bg_color = Color(0.72549, 0.584314, 0, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tm1fx")
+
+[node name="PlayerInfo" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 370.0
+offset_bottom = 142.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_elr6c")
+
+[node name="AvatarFrame" type="Panel" parent="PlayerInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 23.0
+offset_right = -245.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jaoda")
+
+[node name="Avatar" type="TextureRect" parent="PlayerInfo/AvatarFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 11.0
+offset_right = -12.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ljuyh")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="PlayerInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 125.0
+offset_top = 11.0
+offset_right = -115.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Testing"
+vertical_alignment = 1
+
+[node name="TestProgress" type="ProgressBar" parent="PlayerInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 125.0
+offset_top = -65.0
+offset_right = -16.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_e7vko")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rfccl")
+value = 100.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -265.0
+offset_top = 27.0
+offset_right = -21.0
+offset_bottom = 143.0
+grow_horizontal = 0
+theme = SubResource("Theme_tlntx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_48q5y")
+
+[node name="ScoreText" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 32.0
+offset_right = 99.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 28
+text = "Score:"
+vertical_alignment = 1
+
+[node name="ScoreValueText" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 107.0
+offset_top = 39.0
+offset_right = -43.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "0"
+
+[node name="TakeDamage" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = 300.0
+offset_right = -80.0
+offset_bottom = 382.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Decrease Health"
+
+[node name="IncreaseScore" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 78.0
+offset_top = 297.0
+offset_right = 260.0
+offset_bottom = 379.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Increase Score"
+
+[connection signal="pressed" from="TakeDamage" to="." method="_on_take_damage_pressed"]
+[connection signal="pressed" from="IncreaseScore" to="." method="_on_increase_score_pressed"]
