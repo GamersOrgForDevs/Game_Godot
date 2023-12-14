@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bab58x4jejlov"
+path="res://.godot/imported/Running raider-Sheet-Sheet.png-0b9f0ad7bb8693828ec8d21fd7d973b8.res"
+
+[deps]
+
+source_file="res://art/Characters/Running raider-Sheet-Sheet.png"
+dest_files=["res://.godot/imported/Running raider-Sheet-Sheet.png-0b9f0ad7bb8693828ec8d21fd7d973b8.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
