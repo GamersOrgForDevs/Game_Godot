@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cc54h4mx5nkoh"]
+[gd_scene load_steps=21 format=3 uid="uid://cc54h4mx5nkoh"]
 
 [ext_resource type="PackedScene" uid="uid://ijhhshl56et3" path="res://characters/example_player.tscn" id="1_f76bs"]
 [ext_resource type="PackedScene" uid="uid://bp51ee7qpp2g7" path="res://ui/ingame_night.tscn" id="1_sgamp"]
@@ -710,12 +710,16 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6m62o"]
+closed = false
+polygon = PackedVector2Array(99, 23, 153, 23, 153, 57, 100, 57)
+
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-1, -1)
-color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CanvasModulate"]
 position = Vector2(1, 3)
@@ -736,7 +740,8 @@ scale = Vector2(2.083, 2.083)
 remote_path = NodePath("../../CanvasModulate/Camera2D")
 
 [node name="PointLight2D2" type="PointLight2D" parent="ExamplePlayer"]
-scale = Vector2(2.08333, 2.08333)
+scale = Vector2(5, 5)
+shadow_enabled = true
 texture = ExtResource("3_h02h7")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -775,9 +780,16 @@ texture = ExtResource("3_h02h7")
 [node name="PointLight2D3" type="PointLight2D" parent="Lights"]
 position = Vector2(32, -104)
 scale = Vector2(0.5, 0.5)
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("3_h02h7")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lights"]
 position = Vector2(112, -9)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_h02h7")
+
+[node name="Occlusions" type="Node" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Occlusions"]
+occluder = SubResource("OccluderPolygon2D_6m62o")
