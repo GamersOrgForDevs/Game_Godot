@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bch428c4s76ww"]
+[gd_scene load_steps=10 format=3 uid="uid://bp51ee7qpp2g7"]
 
-[ext_resource type="Texture2D" uid="uid://cpfys0bgauk3l" path="res://icon.svg" id="1_ljuyh"]
-[ext_resource type="Script" path="res://scripts/ingame_ui.gd" id="1_tm1fx"]
+[ext_resource type="Script" path="res://scripts/ingame_ui.gd" id="1_gm16v"]
+[ext_resource type="Texture2D" uid="uid://cpfys0bgauk3l" path="res://icon.svg" id="2_p0lw8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i52b7"]
 light_mode = 1
@@ -62,7 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tm1fx")
+script = ExtResource("1_gm16v")
 
 [node name="PlayerInfo" type="Panel" parent="."]
 light_mask = 0
@@ -100,7 +100,7 @@ offset_right = -12.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ljuyh")
+texture = ExtResource("2_p0lw8")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="PlayerInfo"]
@@ -116,7 +116,7 @@ offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 28
-text = "Testing"
+text = "NightTime"
 vertical_alignment = 1
 
 [node name="TestProgress" type="ProgressBar" parent="PlayerInfo"]

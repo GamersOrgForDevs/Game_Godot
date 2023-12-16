@@ -1,18 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://dukeo1l05vh4k"]
+[gd_scene load_steps=20 format=3 uid="uid://cc54h4mx5nkoh"]
 
-[ext_resource type="PackedScene" uid="uid://ijhhshl56et3" path="res://characters/example_player.tscn" id="1_eujvy"]
-[ext_resource type="Texture2D" uid="uid://d0nrdop0uingc" path="res://art/Tilesets/Grass.png" id="2_tm5d6"]
-[ext_resource type="Texture2D" uid="uid://ud87ipeyma3m" path="res://art/Tilesets/Hills.png" id="3_p83ul"]
-[ext_resource type="Texture2D" uid="uid://rw3kuq76jrrj" path="res://art/Tilesets/Tilled Dirt.png" id="4_tkh1l"]
-[ext_resource type="Texture2D" uid="uid://cxi0e60bxvfyu" path="res://art/Tilesets/Water.png" id="5_erdr2"]
-[ext_resource type="Texture2D" uid="uid://bquswgbkv8ic7" path="res://art/Tilesets/Wooden House.png" id="6_8yp5p"]
-[ext_resource type="Texture2D" uid="uid://8n27qa17egck" path="res://art/Tilesets/Fences.png" id="7_t5c8j"]
-[ext_resource type="PackedScene" uid="uid://rejki54tgc5n" path="res://objects/chest.tscn" id="8_rtq78"]
-[ext_resource type="Script" path="res://scripts/spawn_enemies_on_path.gd" id="9_8xdyu"]
-[ext_resource type="PackedScene" uid="uid://bch428c4s76ww" path="res://ui/ui.tscn" id="10_rmv6l"]
+[ext_resource type="PackedScene" uid="uid://ijhhshl56et3" path="res://characters/example_player.tscn" id="1_f76bs"]
+[ext_resource type="PackedScene" uid="uid://bp51ee7qpp2g7" path="res://ui/ingame_night.tscn" id="1_sgamp"]
+[ext_resource type="Texture2D" uid="uid://bhg8a812hf2py" path="res://art/lights/eye_glow_test.png" id="3_h02h7"]
+[ext_resource type="Texture2D" uid="uid://d0nrdop0uingc" path="res://art/Tilesets/Grass.png" id="3_x0m01"]
+[ext_resource type="Texture2D" uid="uid://ud87ipeyma3m" path="res://art/Tilesets/Hills.png" id="4_0dom7"]
+[ext_resource type="Texture2D" uid="uid://rw3kuq76jrrj" path="res://art/Tilesets/Tilled Dirt.png" id="5_7ryys"]
+[ext_resource type="Texture2D" uid="uid://cxi0e60bxvfyu" path="res://art/Tilesets/Water.png" id="6_jbket"]
+[ext_resource type="Texture2D" uid="uid://bquswgbkv8ic7" path="res://art/Tilesets/Wooden House.png" id="7_m430f"]
+[ext_resource type="Texture2D" uid="uid://8n27qa17egck" path="res://art/Tilesets/Fences.png" id="8_2rpcp"]
+[ext_resource type="PackedScene" uid="uid://rejki54tgc5n" path="res://objects/chest.tscn" id="9_cxs18"]
+[ext_resource type="Script" path="res://scripts/spawn_enemies_on_path.gd" id="10_3mi21"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r4cg3"]
-texture = ExtResource("2_tm5d6")
+texture = ExtResource("3_x0m01")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -228,7 +229,7 @@ texture = ExtResource("2_tm5d6")
 7:7/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4go2k"]
-texture = ExtResource("3_p83ul")
+texture = ExtResource("4_0dom7")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -347,7 +348,7 @@ texture = ExtResource("3_p83ul")
 5:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nshu3"]
-texture = ExtResource("4_tkh1l")
+texture = ExtResource("5_7ryys")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -536,7 +537,7 @@ texture = ExtResource("4_tkh1l")
 7:7/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_38cc7"]
-texture = ExtResource("5_erdr2")
+texture = ExtResource("6_jbket")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -551,7 +552,7 @@ texture = ExtResource("5_erdr2")
 3:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c165t"]
-texture = ExtResource("6_8yp5p")
+texture = ExtResource("7_m430f")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -644,7 +645,7 @@ texture = ExtResource("6_8yp5p")
 6:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdvp8"]
-texture = ExtResource("7_t5c8j")
+texture = ExtResource("8_2rpcp")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -712,24 +713,31 @@ point_count = 5
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 
-[node name="ExamplePlayer" parent="." instance=ExtResource("1_eujvy")]
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(-1, -1)
+color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+
+[node name="Camera2D" type="Camera2D" parent="CanvasModulate"]
+position = Vector2(1, 3)
+scale = Vector2(0.49992, 0.49992)
+zoom = Vector2(2, 2)
+
+[node name="InGameUI" parent="CanvasModulate/Camera2D" instance=ExtResource("1_sgamp")]
+offset_left = -750.0
+offset_top = -400.0
+offset_right = 750.0
+offset_bottom = 400.0
+
+[node name="ExamplePlayer" parent="." instance=ExtResource("1_f76bs")]
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="ExamplePlayer"]
 position = Vector2(0, 8.33333)
 scale = Vector2(2.083, 2.083)
-remote_path = NodePath("../../Camera2D")
+remote_path = NodePath("../../CanvasModulate/Camera2D")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 2)
-scale = Vector2(0.49992, 0.49992)
-zoom = Vector2(2, 2)
-
-[node name="InGameUI" parent="Camera2D" instance=ExtResource("10_rmv6l")]
-layout_direction = 1
-offset_left = -749.0
-offset_top = -402.0
-offset_right = 753.0
-offset_bottom = 401.0
+[node name="PointLight2D2" type="PointLight2D" parent="ExamplePlayer"]
+scale = Vector2(2.08333, 2.08333)
+texture = ExtResource("3_h02h7")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 2)
@@ -743,16 +751,33 @@ layer_1/z_index = -5
 layer_1/tile_data = PackedInt32Array(-65538, 65536, 3, -65537, 131072, 3, -131072, 131072, 3, -131071, 131072, 3, -131070, 131072, 3, -131069, 131072, 3, -2, 65536, 4, 65534, 65536, 4, 131070, 65536, 4, 196606, 65536, 5, 196607, 131072, 5, 131072, 131072, 5, 131073, 131072, 5, 131074, 131072, 5, 131075, 131072, 5, 131076, 196608, 5, -131068, 196608, 3, -65532, 196608, 4, 4, 196608, 4, 65540, 196608, 4, -1, 131072, 4, 65535, 131072, 4, 0, 131072, 4, 65536, 131072, 4, 65537, 131072, 4, 65538, 131072, 4, 2, 131072, 4, -65534, 131072, 4, -65535, 131072, 4, -65536, 131072, 4, 131071, 131072, 4, 1, 131072, 4, -65533, 131072, 4, 3, 131072, 4, 65539, 131072, 4, -393216, 65537, 1, -393215, 131073, 1, -393214, 131073, 1, -524288, 65537, 0, -458752, 65537, 1, -524287, 131073, 0, -458751, 131073, 1, -524286, 131073, 0, -458750, 131073, 1, -524285, 131073, 0, -458749, 131073, 1, -524284, 131073, 0, -458748, 131073, 1, -524283, 131073, 0, -458747, 131073, 1, -524282, 131073, 0, -458746, 131073, 1, -524281, 131073, 0, -458745, 131073, 1, -524280, 131073, 0, -458744, 131073, 1, -524279, 196609, 0, -458743, 196609, 1, -327680, 65537, 1, -327679, 131073, 1, -262144, 65537, 2, -262143, 131073, 2, -262142, 131073, 2, -262141, 131073, 2, -262140, 131073, 2, -262139, 131073, 2, -262138, 131073, 2, -262137, 262145, 4, -262136, 327681, 4, -262135, 196609, 2, -393207, 196609, 1, -327671, 196609, 1, -327673, 262145, 3, -196601, 262145, 5, -327672, 327681, 3, -196600, 327681, 5, -393213, 131073, 1, -393212, 131073, 1, -393211, 131073, 1, -393210, 131073, 1, -393208, 131073, 1, -393209, 131073, 1, -327674, 131073, 1, -327675, 131073, 1, -327676, 131073, 1, -327677, 131073, 1, -327678, 131073, 1)
 metadata/_edit_lock_ = true
 
-[node name="Chest" parent="." instance=ExtResource("8_rtq78")]
+[node name="Chest" parent="." instance=ExtResource("9_cxs18")]
 position = Vector2(109, -11)
 
-[node name="Chest2" parent="." instance=ExtResource("8_rtq78")]
+[node name="Chest2" parent="." instance=ExtResource("9_cxs18")]
 position = Vector2(-39, -41)
 
-[node name="Chest3" parent="." instance=ExtResource("8_rtq78")]
+[node name="Chest3" parent="." instance=ExtResource("9_cxs18")]
 position = Vector2(32, -105)
 
 [node name="EnemyPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_m60xl")
-script = ExtResource("9_8xdyu")
+script = ExtResource("10_3mi21")
 spawn_time = 0.55
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(-39, -38)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h02h7")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(32, -104)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h02h7")
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(112, -9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_h02h7")
