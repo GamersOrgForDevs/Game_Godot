@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://cc54h4mx5nkoh"]
 
-[ext_resource type="PackedScene" uid="uid://ijhhshl56et3" path="res://characters/example_player.tscn" id="1_f76bs"]
 [ext_resource type="PackedScene" uid="uid://bp51ee7qpp2g7" path="res://ui/ingame_night.tscn" id="1_sgamp"]
+[ext_resource type="PackedScene" uid="uid://dpt3a37i3d6qn" path="res://characters/night_player.tscn" id="2_xfowx"]
 [ext_resource type="Texture2D" uid="uid://bhg8a812hf2py" path="res://art/lights/eye_glow_test.png" id="3_h02h7"]
 [ext_resource type="Texture2D" uid="uid://d0nrdop0uingc" path="res://art/Tilesets/Grass.png" id="3_x0m01"]
 [ext_resource type="Texture2D" uid="uid://ud87ipeyma3m" path="res://art/Tilesets/Hills.png" id="4_0dom7"]
@@ -732,14 +732,14 @@ offset_top = -400.0
 offset_right = 750.0
 offset_bottom = 400.0
 
-[node name="ExamplePlayer" parent="." instance=ExtResource("1_f76bs")]
+[node name="NightPlayer" parent="." instance=ExtResource("2_xfowx")]
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="ExamplePlayer"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="NightPlayer"]
 position = Vector2(0, 8.33333)
 scale = Vector2(2.083, 2.083)
 remote_path = NodePath("../../CanvasModulate/Camera2D")
 
-[node name="PointLight2D2" type="PointLight2D" parent="ExamplePlayer"]
+[node name="PointLight2D2" type="PointLight2D" parent="NightPlayer"]
 scale = Vector2(5, 5)
 shadow_enabled = true
 shadow_color = Color(0.328188, 1.08294e-07, 0.174931, 0.337255)

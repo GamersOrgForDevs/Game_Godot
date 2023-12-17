@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://dpt3a37i3d6qn"]
+
+[ext_resource type="Script" path="res://scripts/night_player.gd" id="1_xht7t"]
+[ext_resource type="Texture2D" uid="uid://xeq3evnax3tx" path="res://art/Characters/lil guy1.png" id="2_ou4xx"]
+[ext_resource type="Texture2D" uid="uid://cj7nhphde6wiv" path="res://art/Characters/lil guy2.png" id="3_hmc62"]
+[ext_resource type="Texture2D" uid="uid://cl3lfo57ryv3v" path="res://art/Characters/lil guy5.png" id="4_xbsmn"]
+[ext_resource type="Texture2D" uid="uid://be6ljqkymjxar" path="res://art/Characters/lil guy6.png" id="5_n5ju1"]
+[ext_resource type="Texture2D" uid="uid://colq20kmohh6o" path="res://art/Characters/lil guy3.png" id="6_bylj4"]
+[ext_resource type="Texture2D" uid="uid://gb5yue6s3ffq" path="res://art/Characters/lil guy4.png" id="7_wjy4r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5scxj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ou4xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hmc62")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xbsmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n5ju1")
+}],
+"loop": true,
+"name": &"Running L+R",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bylj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wjy4r")
+}],
+"loop": true,
+"name": &"Running U+D",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_515u8"]
+size = Vector2(100, 123.667)
+
+[node name="ExamplePlayer" type="CharacterBody2D"]
+scale = Vector2(0.24, 0.24)
+script = ExtResource("1_xht7t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.38419e-07, 0)
+scale = Vector2(2.14844, 2.08333)
+sprite_frames = SubResource("SpriteFrames_5scxj")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.38813e-21, 0)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_515u8")
+debug_color = Color(0, 0.6, 0.705882, 0.419608)
