@@ -1,7 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bch428c4s76ww"]
+[gd_scene load_steps=10 format=3 uid="uid://bp51ee7qpp2g7"]
 
-[ext_resource type="Texture2D" uid="uid://cpfys0bgauk3l" path="res://icon.svg" id="1_ljuyh"]
-[ext_resource type="Script" path="res://scripts/ingame_ui.gd" id="1_tm1fx"]
+[ext_resource type="Script" path="res://scripts/ingame_ui.gd" id="1_gm16v"]
+[ext_resource type="Texture2D" uid="uid://cpfys0bgauk3l" path="res://icon.svg" id="2_p0lw8"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i52b7"]
 light_mode = 1
@@ -40,12 +40,6 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj3oe"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdyof"]
-bg_color = Color(0, 0.568627, 0.996078, 1)
-
 [sub_resource type="Theme" id="Theme_tlntx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48q5y"]
@@ -68,7 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tm1fx")
+script = ExtResource("1_gm16v")
 
 [node name="PlayerInfo" type="Panel" parent="."]
 light_mask = 0
@@ -106,7 +100,7 @@ offset_right = -12.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ljuyh")
+texture = ExtResource("2_p0lw8")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="PlayerInfo"]
@@ -122,7 +116,7 @@ offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 28
-text = "Testing"
+text = "NightTime"
 vertical_alignment = 1
 
 [node name="TestProgress" type="ProgressBar" parent="PlayerInfo"]
@@ -133,31 +127,14 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 126.0
-offset_top = -76.0
-offset_right = -15.0
-offset_bottom = -49.0
+offset_left = 125.0
+offset_top = -65.0
+offset_right = -16.0
+offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_e7vko")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rfccl")
-value = 100.0
-
-[node name="ManaProgress" type="ProgressBar" parent="PlayerInfo"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 126.0
-offset_top = -37.0
-offset_right = -15.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_kj3oe")
-theme_override_styles/fill = SubResource("StyleBoxFlat_sdyof")
 value = 100.0
 
 [node name="Panel" type="Panel" parent="."]
@@ -199,7 +176,7 @@ offset_bottom = -38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 28
-text = "30"
+text = "0"
 
 [node name="TakeDamage" type="Button" parent="."]
 use_parent_material = true
@@ -209,13 +186,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -398.0
-offset_top = 423.0
-offset_right = -216.0
-offset_bottom = 505.0
+offset_left = -262.0
+offset_top = 300.0
+offset_right = -80.0
+offset_bottom = 382.0
 grow_horizontal = 2
 grow_vertical = 2
-disabled = true
 text = "Decrease Health"
 
 [node name="IncreaseScore" type="Button" parent="."]
@@ -226,30 +202,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 246.0
-offset_top = 422.0
-offset_right = 428.0
-offset_bottom = 504.0
+offset_left = 78.0
+offset_top = 297.0
+offset_right = 260.0
+offset_bottom = 379.0
 grow_horizontal = 2
 grow_vertical = 2
-disabled = true
 text = "Increase Score"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -185.0
-offset_top = -87.0
-offset_right = 185.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Press \"Spacebar\" to use mana and \"C\" to charge mana!
-
-Press \"P\" to spend a coin and \"O\" to earn a coin!"
 
 [connection signal="pressed" from="TakeDamage" to="." method="_on_take_damage_pressed"]
 [connection signal="pressed" from="IncreaseScore" to="." method="_on_increase_score_pressed"]

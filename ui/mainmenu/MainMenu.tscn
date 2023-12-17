@@ -80,4 +80,5 @@ theme_override_font_sizes/font_size = 20
 text = "Exit Game"
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Continue" to="." method="_on_Button_pressed" binds= ["Continue"]]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/NewGame" to="." method="_on_Button_pressed" binds= ["NewGame"]]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ExitGame" to="." method="_on_Button_pressed" binds= ["ExitGame"]]
